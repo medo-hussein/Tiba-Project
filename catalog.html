@@ -318,14 +318,43 @@
           </div>
 </main>
 
-<div class="container">
+ <div class="container">
     <footer class="py-3 my-4">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-body-secondary">الصفحةالرئيسية</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">الصفحةالرئيسية</a></li>
         <li class="nav-item"><a href="./catalog.html" class="nav-link px-2 text-body-secondary">الكتالوج</a></li>
       </ul>
       <p class="text-center text-body-secondary">© 2025 طيبة</p>
-    </footer>
+      <div class="d-grid gap-2 col-2 mx-auto mb-2">
+      <button class="btn btn-outline-primary btn-sm" 
+        onclick="sendMessengerMessage('<?php echo $pro_id; ?>')">تواصل عبر ماسنجر</button>
+
+<script>
+function sendMessengerMessage(productId) {
+    const message = encodeURIComponent(`برجاء معرفة المزيد عن المنتج `);
+    const facebookUsername = 'ahmed.hesseien'; // Replace with your Facebook username or page name
+    const url = `https://m.me/${facebookUsername}?message=${message}`;
+    
+    // Redirect to Messenger
+    window.open(url, '_blank');
+}
+</script>
+</div>
+<div class="d-grid gap-2 col-2 mx-auto">
+    <button class="btn btn-outline-success btn-sm" onclick="sendWhatsAppMessage('<?php echo $pro_id; ?>')">تواصل عبر واتساب</button>
+
+  <script>
+  function sendWhatsAppMessage(productId) {
+      const phoneNumber = '201064146167'; // Replace with the correct phone number
+      const message = encodeURIComponent(`برجاء معرفة المزيد عن هذا المنتج`);
+      const url = `https://wa.me/${phoneNumber}?text=${message}`;
+  
+      window.open(url, '_blank'); // Open WhatsApp in a new tab
+  }
+  </script>
+   </div>
+</div>
+</footer>
   </div>
 <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
